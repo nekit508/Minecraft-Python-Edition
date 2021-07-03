@@ -4,32 +4,14 @@ import os
 
 def init():
     print("[Initializing]")
-    world = []
-    for i in range(3):
-        world.append([])
-        for z in range(3):
-            world[i].append([])
-            for c in range(3):
-                world[i][z].append([])
-                for ii in range(16):
-                    world[i][z][c].append([])
-                    for zz in range(16):
-                        world[i][z][c][ii].append([])
-                        for cc in range(16):
-                            world[i][z][c][ii][zz].append(0)
-    chunkData = []
-    for i in range(3):
-        chunkData.append([])
-        for z in range(3):
-            chunkData[i].append([])
-            for c in range(3):
-                chunkData[i][z].append(0)
+    world = [[[[[[0 for _ in range(16)] for _ in range(16)] for _ in range(16)] for _ in range(3)] for _ in range(3)] for _ in range(3)]
+    chunkData = [[[0 for _ in range(3)] for _ in range(3)] for _ in range(3)]
     return world,chunkData
 
 def giveChunk(x,y,z,world,data,curSaveName):
     print("[Giving chunk at x:{x} y:{y} z:{z}]".format(x=x,y=y,z=z),end="")
     if "{x}-{y}-{z}.mpes".format(x=x,y=y,z=z) in os.listdir("saves/{name}".format(name=curSaveName)):
-        pass
+        file = open("saves/{name}/{x}-{y}-{z}.mpes".format(x=x,y=y,z=z,name=curSaveName))
     else:
         print(" generating")
         noise = NoiseGen(gen(16,16,"{x}-{z}".format(x=x,z=z)))
