@@ -8,4 +8,3 @@ Pillow==8.2.0
 pyglet==1.5.17
 pyperclip==1.8.2
 screeninfo==0.6.7
-ursina==3.5.0
