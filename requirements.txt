@@ -1,0 +1,11 @@
+libopencv==0.0.1
+llvmlite==0.36.0
+numba==0.53.1
+numpy==1.20.3
+opencv-python==4.5.2.54
+panda3d==1.10.9
+Pillow==8.2.0
+pyglet==1.5.17
+pyperclip==1.8.2
+screeninfo==0.6.7
+ursina==3.5.0
